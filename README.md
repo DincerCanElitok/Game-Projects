@@ -1,4 +1,4 @@
-# Unity Game Codes
+# Game Projects
 ## Why does this repository exist?
 I am sharing some of codes from my game projects.
 ## Do you want to check my game projects?
