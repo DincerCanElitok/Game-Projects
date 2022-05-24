@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 public class RoomSpawner : MonoBehaviour
 {
     public int openinDirection;
@@ -12,12 +12,15 @@ public class RoomSpawner : MonoBehaviour
     public float waitTime = 1f;
     void Start()
     {
+        //Destroy empty game object after the wait time
         Destroy(gameObject, waitTime);
+        //taking room prefabs from room templates class
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         Invoke("Spawn", 0.1f);
     }
     void Spawn()
     {
+        //if this game object not spawn a room check its direction and spawn a random room in same direction section
         if(spawned==false)
         {
             if (openinDirection == 2)
@@ -44,6 +47,8 @@ public class RoomSpawner : MonoBehaviour
         }
         
     }
+    //checking if more than one room spawner gameobject in the same location
+    //??? Check this code later
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("SpawnPoint"))
