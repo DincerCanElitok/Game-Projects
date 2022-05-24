@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 
@@ -22,15 +22,15 @@ public class Player_Progress : MonoBehaviour
     public int healtUpgradeNumber=1;
     public int playerMaxcan;
     public float reloadtime;
-    Player_haraket player_Haraket;
+    Player_movement player_movement;
     public List<GameObject> ammolist;
     public List<bool> ammoIsOpen;
     public int selectedAmmo;
-    P_saldiri p_Saldiri;
+    P_attack p_attack;
     void Awake()
     {
-        p_Saldiri = GetComponent<P_saldiri>();
-        player_Haraket = GetComponent<Player_haraket>();
+        p_attack = GetComponent<P_attack>();
+        player_movement = GetComponent<Player_movement>();
     }
     void Start()
     {
@@ -82,14 +82,14 @@ public class Player_Progress : MonoBehaviour
             {
                 if(engine_first==false)
                 {
-                    player_Haraket.motor1 = child.gameObject;
-                    player_Haraket.particle1 = player_Haraket.motor1.GetComponent<ParticleSystem>();
+                    player_movement.motor1 = child.gameObject;
+                    player_movement.particle1 = player_movement.motor1.GetComponent<ParticleSystem>();
                     engine_first = true;
                 }
                 else
                 {
-                    player_Haraket.motor2 = child.gameObject;
-                    player_Haraket.particle2 = player_Haraket.motor2.GetComponent<ParticleSystem>();
+                    player_movement.motor2 = child.gameObject;
+                    player_movement.particle2 = player_movement.motor2.GetComponent<ParticleSystem>();
                     engine_first = false;
                 }
                     
@@ -98,12 +98,12 @@ public class Player_Progress : MonoBehaviour
             {
                 if(atis_first==false)
                 {
-                    p_Saldiri.atisnoktasi[0] = child.gameObject;
+                    p_attack.atisnoktasi[0] = child.gameObject;
                     atis_first = true;
                 }
                 else
                 {
-                    p_Saldiri.atisnoktasi[1] = child.gameObject;
+                    p_attack.atisnoktasi[1] = child.gameObject;
                     atis_first = false;
                 }
             }
@@ -116,10 +116,10 @@ public class Player_Progress : MonoBehaviour
         {
             for (int i=0; i < ammolist.Count; i++)
             {
-                if (ammolist[i].gameObject == p_Saldiri.mermi)
+                if (ammolist[i].gameObject == p_attack.mermi)
                     selectedAmmo = i;
             }
         }
-        p_Saldiri.mermi = ammolist[selectedAmmo];
+        p_attack.mermi = ammolist[selectedAmmo];
     }
 }
