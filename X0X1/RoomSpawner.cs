@@ -1,4 +1,7 @@
 using UnityEngine;
+//source : Blackthornprod / RANDOM DUNGEON GENERATION https://www.youtube.com/watch?v=qAf9axsyijY
+// i just used his idea in 3d game project and make a minimap with that idea but i realize using two camera much more logical
+// OntriggerEnter and OnTriggerStay functions should not be corrcet i will check later
 public class RoomSpawner : MonoBehaviour
 {
     public int openinDirection;
