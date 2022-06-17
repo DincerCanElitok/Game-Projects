@@ -67,7 +67,7 @@ public class Play_Manager : MonoBehaviour
         if (playerActivePhase == 0)
         {
             //changing game title 
-            Title_Textbox.GetComponent<TMP_Text>().text = "Tutorýal"; 
+            Title_Textbox.GetComponent<TMP_Text>().text = "TutorÃ½al"; 
             //tutorial codes
         }       
         else
