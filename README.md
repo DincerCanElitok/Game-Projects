@@ -7,6 +7,6 @@ I am sharing some of codes from my game projects.
 ```
 https://play.google.com/apps/testing/com.XOXGames.X0X1
 ```
-Performance optimization not done yet in this project
+Performance optimization has not been done in this project yet. Maybe it will be published in the future.
 ### Phases 
-Will be published soon
+It will likely never be published.
